@@ -1,0 +1,5 @@
+
+# Swagger gives you the OPEN-API documentation
+# How to view Swagger-ui
+http://localhost:8080/swagger-ui/index.html or just http://localhost:8080/swagger-ui/
+

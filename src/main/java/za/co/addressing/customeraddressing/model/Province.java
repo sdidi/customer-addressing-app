@@ -1,5 +1,6 @@
 package za.co.addressing.customeraddressing.model;
 
+import io.swagger.annotations.ApiModel;
 import java.io.Serializable;
 import javax.persistence.*;
 import lombok.*;
@@ -10,6 +11,7 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 @IdClass( ProvinceId.class )
+@ApiModel(description = "Province model with all details")
 public class Province implements Serializable
 {
 	@Id

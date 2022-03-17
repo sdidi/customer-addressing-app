@@ -1,5 +1,6 @@
 package za.co.addressing.customeraddressing.model;
 
+import io.swagger.annotations.ApiModel;
 import javax.persistence.*;
 import lombok.*;
 
@@ -8,6 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ApiModel(description = "Country model with all details")
 public class Country
 {
 	@Id

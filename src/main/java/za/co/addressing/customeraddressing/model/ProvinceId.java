@@ -1,5 +1,6 @@
 package za.co.addressing.customeraddressing.model;
 
+import io.swagger.annotations.ApiModel;
 import java.io.Serializable;
 import java.util.Objects;
 import lombok.*;
@@ -7,6 +8,7 @@ import lombok.*;
 @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ApiModel(description = "Province ID model to allow a referential integrity")
 public class ProvinceId implements Serializable
 {
 	public String countryCode;
