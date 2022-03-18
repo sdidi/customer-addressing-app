@@ -62,8 +62,8 @@ public class AddressControllersIT
 	@Test
 	public void givenCorrectAddressDeatilsCheckIfCorrectDetailsAreCreated(){
 		Address address = new Address();
-		address.setLine1( "Unit 15" );
-		address.setLine2( "Mews Street" );
+		address.setLine1( "Unit 151" );
+		address.setLine2( "Mews Street 2" );
 		address.setSuburb( "Mowbray" );
 		address.setCity( "Cape Town " );
 		Country country = countryService.findByCountryCode( "ZA" ).get();
