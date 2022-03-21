@@ -1,5 +1,5 @@
-Mini Practica Project Specification:
-Create a simple Java project for the capturing of address detail.
+Mini Practical Project Specification:
+Create a simple Java project for the capturing of address details that uses Spring Boot and React JS.
 
 This project has Address Component supported by 3 database tables (Address, Province and Country).
 Create back-end entities and the necessary back-end logic to support the capturing (creating and updating of addresses).
