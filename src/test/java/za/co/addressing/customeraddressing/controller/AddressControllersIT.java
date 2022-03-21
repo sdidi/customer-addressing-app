@@ -1,6 +1,5 @@
 package za.co.addressing.customeraddressing.controller;
 
-import java.util.Map;
 import java.util.logging.Logger;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

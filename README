@@ -1,5 +1,74 @@
+Mini Practica Project Specification:
+Create a simple Java project for the capturing of address detail.
 
-# Swagger gives you the OPEN-API documentation
+This project has Address Component supported by 3 database tables (Address, Province and Country).
+Create back-end entities and the necessary back-end logic to support the capturing (creating and updating of addresses).
+Create a method that will return all the countries sorted alphabetically.
+Create a method that will return all the provinces for a specific countryCode.
+The system should not allow for duplicate addresses.
+Address:
+That contains the actual address information for multiple customers, with
+the following information.
+AddressId
+Line1
+Line2
+Suburb
+City
+Province
+PostalCode
+Country
+Province:
+That contains a country code, province code and name (Create a
+composite key on the two codes)
+CountryCode
+ProvinceCode
+Name
+Country (CountryCode as the unique index and primary key):
+CountryCode
+Name
+User Interface:
+======================
+Build one screen (web page) for the capturing of the address fields.
+The PostalCode field should only allow numbers and a minimum length of 3 and a maximum of 7 digits.
+The Country and Province fields must be dropdown fields.
+The Province dropdown list should be updated onChange of the Country.
+(For example only ZA provinces when ZA is selected).
+Line1, City, Province, PostalCode and Country must be required fields.
+Actual Data:
+===================
+Countries:
+ZA, South Africa,
+AF, Afghanistan,
+AU, Australia
+Provinces:
+L, Limpopo
+EC, Eastern Cape
+NC, Northern Cape
+WC, Western Cape
+KZN, Kwazulu-Natal
+NW, North West
+FS, Free State
+GP, Gauteng
+Important Notes:
+1.) Please make use of Spring Framework and Spring Boot wherever possible.
+2.) Make use of React JS to build the address capturing screen.
+3.) Any Database of your choice can be used.
+4.) You are welcome to add more table fields where you see fit to enrich the data, improve performance or improve functionality
+5.) Adhere to Java standards, naming conventions and best practices that you are aware of
+6.) We want to see the way you think and write code, initiative is important
+7.) Please don’t send us your code, we want to perform a code review session and review your code with you
+
+This project makes use of MySQL database and creates the 3 entities as stipulated above. I have used Lombok library on creating
+entities properties. The project is created using Spring Boot and have included Swagger that gives the OPEN-API documentation
+
 # How to view Swagger-ui
 http://localhost:8080/swagger-ui/index.html or just http://localhost:8080/swagger-ui/
+
+I have created unit tests with junit and Mockito library as well as Integration tests (I have tried to usee TDD but not completely)
+
+The client is created with react js you can start it on terminal:
+ npm start
+
+ It starts a server on port 3000. http://localhost:3000
+
 
