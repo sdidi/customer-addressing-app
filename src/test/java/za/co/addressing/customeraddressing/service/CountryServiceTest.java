@@ -1,9 +1,11 @@
 package za.co.addressing.customeraddressing.service;
 
+import java.util.Optional;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import za.co.addressing.customeraddressing.model.Country;
+import za.co.addressing.customeraddressing.model.*;
 import za.co.addressing.customeraddressing.repository.CountryRepository;
 
 import static org.junit.Assert.assertEquals;
@@ -12,16 +14,17 @@ import static org.mockito.Mockito.*;
 @SpringBootTest
 public class CountryServiceTest
 {
+	@Autowired
+	CountryService countryService;
 	@MockBean
 	CountryRepository countryRepository;
 
 	@Test
-	public void testGetCountryByCode_usingMock(){
-		//CountryRepository countryRepository = mock(CountryRepository.class);
-		when(countryRepository.findCountryByCode( "ZA" )).thenReturn( new Country("ZA","South Africa") );
-		Country country = countryRepository.findCountryByCode( "ZA" );
-		assertEquals("South Africa",country.getName());
-		assertEquals( "ZA",country.getCode() );
+	public void whenCodeIsProvided_returnCorrectCountry(){
+		Country country = new Country("ZA","South Africa");
+		doReturn( country).when( countryRepository).findCountryByCode( "ZA" );
+		Optional<Country> country1 = countryService.findByCountryCode( "ZA" );
+		assertEquals( "South Africa" ,country1.get().getName());
 	}
 
 	@Test

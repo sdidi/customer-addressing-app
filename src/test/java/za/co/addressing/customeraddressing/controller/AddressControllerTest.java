@@ -1,7 +1,7 @@
 package za.co.addressing.customeraddressing.controller;
 
 import java.util.*;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,11 +17,8 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
 @SpringBootTest
-@WebMvcTest(value= AddressController.class )
 public class AddressControllerTest
 {
-	@Autowired
-	private MockMvc mockMvc;
 
 	@MockBean
 	private AddressService addressService;

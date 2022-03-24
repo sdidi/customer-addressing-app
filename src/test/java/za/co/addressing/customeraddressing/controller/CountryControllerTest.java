@@ -1,11 +1,12 @@
 package za.co.addressing.customeraddressing.controller;
 
 import java.util.*;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.platform.commons.logging.Logger;
 import org.junit.runner.RunWith;
 import org.mockito.*;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,22 +30,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
-@ExtendWith( MockitoExtension.class )
+@SpringBootTest
 public class CountryControllerTest
 {
-	@InjectMocks
+	@MockBean
 	private CountryService countryService;
-
-	@Mock
-	private CountryRepository countryRepository;
-
-/*	@Configuration
-	static class Config {
-		@Bean
-		public CountryService countryService(){
-			return new CountryServiceImpl();
-		}
-	}*/
 
 	Country mockCountry = new Country("ZA","South Africa");
 
@@ -62,7 +52,7 @@ public class CountryControllerTest
 		list.add( c3 );
 		list.add( c4 );
 
-		when(countryRepository.findAll()).thenReturn( list );
+		when(countryService.getCountries()).thenReturn( list );
 
 		List<Country> countryList = countryService.getCountries();
 		assertEquals( 4,countryList.size() );
