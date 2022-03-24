@@ -47,7 +47,7 @@ public class AddressControllerTest
 		AddressService mock = mock(AddressService.class);
 		when(mock.getAddressById( 1L )).thenReturn( mockAddress );
 		Address address = mock.getAddressById( 1L );
-		assertEquals( "Western Cape",address.getProvince() );
+		assertEquals( "Western Cape",address.getProvince().getName() );
 		assertEquals( "Athlone",address.getSuburb() );
 
 	}

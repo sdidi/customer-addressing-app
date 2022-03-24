@@ -71,4 +71,25 @@ The client is created with react js you can start it on terminal:
 
  It starts a server on port 3000. http://localhost:3000
 
+ Used junit 5 with Mockito for unit tests and integration tests. Unit Tests are created for the service and controller layer.
+
+ Used Spring Boot Logging with Lombok for the controller and service layer.
+
+ I created the jar file to enable docker containerization with :
+$> ./mvnw package && java -jar target/customer-addressing.jar
+
+docker image name created with: docker build -t customer-api-docker . 
+
+run with: docker run -dp 9090:8082 customer-api-docker
+
+
+
+
+
+
+
+
+
+
+
 
