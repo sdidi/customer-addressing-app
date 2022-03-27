@@ -78,7 +78,7 @@ The client is created with react js you can start it on terminal:
  I created the jar file to enable docker containerization with :
 $> ./mvnw package && java -jar target/customer-addressing.jar
 
-docker image name created with: docker build -t customer-api-docker . 
+docker image name created with: docker build -t customer-api-docker .
 
 run with: docker run -dp 9090:8082 customer-api-docker
 
